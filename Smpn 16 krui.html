@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMPN 16 Krui</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #9face6);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Login Box */
+    .login-box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      text-align: center;
+      width: 300px;
+      animation: fadeIn 1.5s ease;
+    }
+    .login-box h2 { margin-bottom: 20px; color: #333; }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #aaa;
+      border-radius: 8px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover { background: #45a049; }
+
+    /* Halaman utama */
+    .hidden { display: none; }
+    .content {
+      width: 100%;
+      text-align: center;
+      color: white;
+    }
+
+    /* Header dengan logo */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1e3c72;
+      background: linear-gradient(to right, #2a5298, #1e3c72);
+      color: white;
+      padding: 15px;
+    }
+    .header img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      animation: spin 6s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    /* Konten utama */
+    .gallery {
+      margin-top: 30px;
+    }
+    .gallery img {
+      width: 200px;
+      border-radius: 15px;
+      margin: 10px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    video {
+      width: 320px;
+      margin-top: 20px;
+      border-radius: 10px;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login -->
+  <div class="login-box" id="loginBox">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button onclick="login()">Masuk</button>
+  </div>
+
+  <!-- Halaman Utama -->
+  <div class="content hidden" id="content">
+    <div class="header">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Lampung_coa.png" alt="Logo Lampung">
+      <h1>SEKOLAH SMPN 16 KRUI</h1>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Emblem_of_School.svg/1024px-Emblem_of_School.svg.png" alt="Logo SMP">
+    </div>
+
+    <h2>Selamat Datang di Website SMPN 16 Krui</h2>
+
+    <div class="gallery">
+      <img src="https://picsum.photos/200/300?random=1" alt="Foto 1">
+      <img src="https://picsum.photos/200/300?random=2" alt="Foto 2">
+      <img src="https://picsum.photos/200/300?random=3" alt="Foto 3">
+    </div>
+
+    <video autoplay muted loop controls>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Browser tidak mendukung video.
+    </video>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      if (user === "admin" && pass === "1234") {
+        document.getElementById("loginBox").classList.add("hidden");
+        document.getElementById("content").classList.remove("hidden");
+      } else {
+        alert("Username atau password salah!");
+      }
+    }
+  </script>
+</body>
+</html>
