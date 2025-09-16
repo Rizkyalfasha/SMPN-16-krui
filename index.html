@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SMPN 16 KRUI — Demo Sekolah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="https://via.placeholder.com/48x48.png?text=LOGO" alt="logo" />
+      <div>
+        <h1>SMPN 16 KRUI</h1>
+        <small>Berprestasi — Berbudaya — Berkarakter</small>
+      </div>
+    </div>
+    <nav class="nav">
+      <button data-target="home" class="nav-btn active">Home</button>
+      <button data-target="about" class="nav-btn">Tentang</button>
+      <button data-target="departments" class="nav-btn">Jurusan</button>
+      <button data-target="teachers" class="nav-btn">Guru</button>
+      <button data-target="news" class="nav-btn">Pengumuman</button>
+      <button data-target="gallery" class="nav-btn">Galeri</button>
+      <button data-target="admissions" class="nav-btn">Pendaftaran</button>
+      <button data-target="contact" class="nav-btn">Kontak</button>
+      <button id="loginBtn" class="nav-btn">Admin</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HOME -->
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="hero-text">
+          <h2>Selamat Datang di SMPN 16 KRUI</h2>
+          <p>Mendidik generasi berkarakter dan berprestasi — Siap menghadapi tantangan masa depan.</p>
+          <div class="hero-cta">
+            <a href="#" class="btn" id="applyNow">Daftar Sekarang</a>
+            <a href="#brosur" class="btn outline" id="downloadBrochure">Download Brosur</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/flower-1.jpg" alt="school" />
+        </div>
+      </div>
+
+      <div class="quick-cards">
+        <div class="card small">
+          <h3>Akademik</h3><p>Kurikum modern, guru berpengalaman.</p>
+        </div>
+        <div class="card small">
+          <h3>Ekskul</h3><p>OSIS, Basket, Futsal, Seni, Robotics.</p>
+        </div>
+        <div class="card small">
+          <h3>Prestasi</h3><p>Lomba tingkat kabupaten dan provinsi.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="page">
+      <h2>Tentang Sekolah</h2>
+      <p>SMPN 16 KRUI berdiri sejak 1998 dengan visi mencetak lulusan berakhlak mulia dan kompeten.</p>
+      <div class="two-col">
+        <div>
+          <h4>Visi</h4>
+          <p>Menjadi sekolah unggul yang berwawasan lingkungan dan berprestasi.</p>
+        </div>
+        <div>
+          <h4>Misi</h4>
+          <ol>
+            <li>Meningkatkan kualitas pendidikan.</li>
+            <li>Mengembangkan karakter siswa.</li>
+            <li>Mendorong inovasi dan prestasi.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPARTMENTS -->
+    <section id="departments" class="page">
+      <h2>Jurusan & Program</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>IPA</h3><p>Program fokus pada sains dan laboratorium aktif.</p>
+        </div>
+        <div class="card">
+          <h3>IPS</h3><p>Program sosial, ekonomi & studi masyarakat.</p>
+        </div>
+        <div class="card">
+          <h3>Bahasa</h3><p>Penguatan Bahasa Indonesia & Bahasa Inggris.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEACHERS -->
+    <section id="teachers" class="page">
+      <h2>Guru & Staf</h2>
+      <div id="teachersList" class="grid small"></div>
+    </section>
+
+    <!-- NEWS -->
+    <section id="news" class="page">
+      <h2>Pengumuman & Berita</h2>
+      <div id="newsList" class="news-list"></div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="page">
+      <h2>Galeri Kegiatan</h2>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </section>
+
+    <!-- ADMISSIONS -->
+    <section id="admissions" class="page">
+      <h2>Pendaftaran Siswa Baru</h2>
+      <p>Isi form pendaftaran di bawah — ini simulasi (data disimpan di browser).</p>
+      <form id="admissionForm" class="form">
+        <label>Nama lengkap <input name="name" required /></label>
+        <label>Usia <input name="age" type="number" required /></label>
+        <label>Alamat <input name="address" required /></label>
+        <label>Kelas yang dituju
+          <select name="grade"><option>7</option><option>8</option><option>9</option></select>
+        </label>
+        <button type="submit" class="btn">Kirim Pendaftaran</button>
+      </form>
+      <div id="applicants" class="card-list"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="page">
+      <h2>Kontak Sekolah</h2>
+      <p><strong>Alamat:</strong> Jl. Contoh No.1, Way Napal</p>
+      <p><strong>Telepon:</strong> 0812-3456-7890</p>
+      <p><strong>Email:</strong> info@smpn16krui.sch.id</p>
+      <div id="map" class="map-placeholder">Peta (placeholder)</div>
+    </section>
+
+    <!-- ADMIN (modal) -->
+    <div id="adminModal" class="modal hidden">
+      <div class="modal-card">
+        <h3>Admin Panel (Simulasi)</h3>
+        <label>Username <input id="adminUser" /></label>
+        <label>Password <input id="adminPass" type="password" /></label>
+        <div class="modal-actions">
+          <button id="adminLoginBtn" class="btn">Login</button>
+          <button id="adminClose" class="btn outline">Tutup</button>
+        </div>
+        <hr />
+        <div id="adminArea" class="admin-area hidden">
+          <h4>Tambahkan Pengumuman</h4>
+          <input id="newsTitle" placeholder="Judul" />
+          <textarea id="newsBody" placeholder="Isi pengumuman"></textarea>
+          <button id="addNewsBtn" class="btn">Tambah Pengumuman</button>
+          <hr />
+          <h4>Kelola Guru</h4>
+          <input id="teacherName" placeholder="Nama guru" />
+          <input id="teacherSubject" placeholder="Mata pelajaran" />
+          <button id="addTeacherBtn" class="btn">Tambah Guru</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- brochure anchor -->
+    <div id="brosur" class="hidden">
+      <a href="#" download="brosur-smpn16.pdf">Download brosur (simulasi)</a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <small>© 2025 SMPN 16 KRUI — Demo website. Dibuat untuk tujuan pembelajaran.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
