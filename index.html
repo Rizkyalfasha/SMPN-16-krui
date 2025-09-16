@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMPN-16 Krui</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <!-- Judul pakai animasi mengetik -->
+    <h1 id="judul"></h1>
+    <p>Website Resmi SMPN-16 Krui</p>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Selamat Datang</h2>
+      <p>Ini adalah website resmi SMPN-16 Krui yang berisi informasi seputar sekolah.</p>
+    </section>
+
+    <section id="informasi" class="hidden">
+      <h2>Informasi Sekolah</h2>
+      <ul>
+        <li>Alamat: Jalan Pendidikan No.16, Krui</li>
+        <li>Akreditasi: A</li>
+        <li>Jumlah Siswa: 500+</li>
+        <li>Jumlah Guru: 40</li>
+      </ul>
+    </section>
+
+    <section id="pendaftaran" class="hidden">
+      <h2>Pendaftaran Siswa Baru</h2>
+      <form id="formDaftar">
+        <label>Nama Lengkap:</label><br>
+        <input type="text" name="nama" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Pesan:</label><br>
+        <textarea name="pesan" required></textarea><br><br>
+
+        <button type="submit">Kirim</button>
+      </form>
+    </section>
+  </main>
+
+  <nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('informasi')">Informasi</button>
+    <button onclick="showPage('pendaftaran')">Pendaftaran</button>
+  </nav>
+
+  <footer>
+    <p>&copy; 2025 SMPN-16 Krui. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
